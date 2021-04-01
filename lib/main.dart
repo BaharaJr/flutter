@@ -7,17 +7,17 @@ void main() {
 class TestApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return TestAppState();
+    return _TestAppState();
   }
 }
 
-class TestAppState extends State<TestApp> {
-  var questionIndex = 0;
-  sms() {
+class _TestAppState extends State<TestApp> {
+  var _questionIndex = 0;
+  _sms() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
-    print(questionIndex);
+    print(_questionIndex);
   }
 
   @override
@@ -29,9 +29,9 @@ class TestAppState extends State<TestApp> {
           title: Text('Test App'),
         ),
         body: Column(children: [
-          Text(questions[questionIndex]),
+          Text(questions[_questionIndex]),
           RaisedButton(
-            onPressed: sms,
+            onPressed: _sms,
             child: Text('Holla!'),
           ),
         ]),
